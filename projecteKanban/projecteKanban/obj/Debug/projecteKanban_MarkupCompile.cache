@@ -9,19 +9,12 @@ projecteKanban
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-C:\Users\paugu\Desktop\!DAM2\Projecte\Kanban\projecteKanban\projecteKanban\projecteKanban\App.xaml
-41462074501
-
-8-788138183
-=======
 C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\App.xaml
 41462074501
 
-91424740495
->>>>>>> 89d9e210e4e18aedba530a8f2733bd03c9fc6ea8
+9-245410060
 13-1310406943
 Login.xaml;MainWindow.xaml;NewTasca.xaml;Register.xaml;
 
-True
+False
 
