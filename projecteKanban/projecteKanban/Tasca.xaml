@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="projecteKanban.Tasca"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             MinWidth="200" MinHeight="100">
+    <Border Background="White" BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="5">
+        <StackPanel>
+            <TextBlock Text="{Binding CodiTasca}" FontWeight="Bold"/>
+            <TextBlock Text="{Binding Descripcio}" />
+            <TextBlock Text="{Binding Responsable}" />
+            <TextBlock Text="{Binding DataInici}" />
+            <TextBlock Text="{Binding DataFinal}" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="&lt;" />
+                <Button Content="&gt;" />
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

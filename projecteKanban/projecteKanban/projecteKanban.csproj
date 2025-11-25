@@ -58,6 +58,9 @@
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tasca.xaml.cs">
+      <DependentUpon>Tasca.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Usuari.cs" />
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
@@ -83,6 +86,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tasca.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
