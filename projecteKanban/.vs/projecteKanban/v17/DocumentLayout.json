@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\paugu\\Desktop\\!DAM2\\Projecte\\Kanban\\projecteKanban\\projecteKanban\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|C:\\Users\\paugu\\Desktop\\!DAM2\\Projecte\\Kanban\\projecteKanban\\projecteKanban\\projectekanban\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\paugu\\desktop\\!dam2\\projecte\\kanban\\projectekanban\\projectekanban\\projectekanban\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\paugu\\desktop\\!dam2\\projecte\\kanban\\projectekanban\\projectekanban\\projectekanban\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|C:\\Users\\paugu\\Desktop\\!DAM2\\Projecte\\Kanban\\projecteKanban\\projecteKanban\\projectekanban\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|C:\\Users\\paugu\\Desktop\\!DAM2\\Projecte\\Kanban\\projecteKanban\\projecteKanban\\projectekanban\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|C:\\Users\\paugu\\Desktop\\!DAM2\\Projecte\\Kanban\\projecteKanban\\projecteKanban\\projectekanban\\newtasca.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -34,27 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Register.xaml",
-              "DocumentMoniker": "C:\\Users\\paugu\\Desktop\\!DAM2\\Projecte\\Kanban\\projecteKanban\\projecteKanban\\projecteKanban\\Register.xaml",
-              "RelativeDocumentMoniker": "projecteKanban\\Register.xaml",
-              "ToolTip": "C:\\Users\\paugu\\Desktop\\!DAM2\\Projecte\\Kanban\\projecteKanban\\projecteKanban\\projecteKanban\\Register.xaml",
-              "RelativeToolTip": "projecteKanban\\Register.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-25T17:57:53.691Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -79,14 +63,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Register.xaml",
+              "DocumentMoniker": "C:\\Users\\paugu\\Desktop\\!DAM2\\Projecte\\Kanban\\projecteKanban\\projecteKanban\\projecteKanban\\Register.xaml",
+              "RelativeDocumentMoniker": "projecteKanban\\Register.xaml",
+              "ToolTip": "C:\\Users\\paugu\\Desktop\\!DAM2\\Projecte\\Kanban\\projecteKanban\\projecteKanban\\projecteKanban\\Register.xaml",
+              "RelativeToolTip": "projecteKanban\\Register.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-25T17:57:53.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Login.xaml",
               "DocumentMoniker": "C:\\Users\\paugu\\Desktop\\!DAM2\\Projecte\\Kanban\\projecteKanban\\projecteKanban\\projecteKanban\\login.xaml",
               "RelativeDocumentMoniker": "projecteKanban\\login.xaml",
               "ToolTip": "C:\\Users\\paugu\\Desktop\\!DAM2\\Projecte\\Kanban\\projecteKanban\\projecteKanban\\projecteKanban\\login.xaml",
               "RelativeToolTip": "projecteKanban\\login.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-25T17:38:28.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T17:38:28.085Z"
             },
             {
               "$type": "Document",
@@ -125,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\paugu\\Desktop\\!DAM2\\Projecte\\Kanban\\projecteKanban\\projecteKanban\\projecteKanban\\MainWindow.xaml",
               "RelativeDocumentMoniker": "projecteKanban\\MainWindow.xaml",
