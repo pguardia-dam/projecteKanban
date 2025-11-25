@@ -1,0 +1,45 @@
+﻿<Window x:Class="projecteKanban.NewTasca"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projecteKanban"
+        mc:Ignorable="d"
+        Title="NewTasca" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="Nova Tasca" VerticalAlignment="Center" FontSize="40" FontWeight="Bold"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+            <StackPanel  Grid.Column="0" Margin="20">
+                <TextBlock Text="Nom Tasca:" FontSize="20"/>
+                <TextBox x:Name="NomTascaTextBox" Width="270" HorizontalAlignment="Left" />
+                <TextBlock Text="Descripció:" FontSize="20"/>
+                <TextBox x:Name="DescripcioTextBox" Width="270" HorizontalAlignment="Left" Height="93"/>
+                <TextBlock Text="Data Inici:" FontSize="20"/>
+                <DatePicker x:Name="DataIniciPicker" Width="270" HorizontalAlignment="Left" />
+                <TextBlock Text="Data Entrega Provisional:" FontSize="20"/>
+                <DatePicker x:Name="DataEntregaPicker" Width="270" HorizontalAlignment="Left" />
+            </StackPanel>
+            <StackPanel  Grid.Column="1" Margin="20">
+                <TextBlock Text="Prioritat:" FontSize="20" Margin="0,40,0,0"/>
+                <RadioButton Name="UrgentRadioButton" Content="Urgent"  Margin="0,10,10,10"/>
+                <RadioButton Name="AltaRadioButton" Content="Alta"  Margin="0,0,10,10"/>
+                <RadioButton Name="MitjaRadioButton" Content="Mitja" Margin="0,0,10,10"/>
+                <RadioButton Name="BaixaRadioButton" Content="Baixa" Margin="0,0,10,10"/>
+                <RadioButton Name="OpcionalRadioButton" Content="Opcional/NA" Margin="0,0,10,10"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>

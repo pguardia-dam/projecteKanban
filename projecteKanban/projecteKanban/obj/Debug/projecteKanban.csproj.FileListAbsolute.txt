@@ -16,3 +16,5 @@ C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanba
 C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\projecteKanban.exe
 C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\projecteKanban.pdb
 C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\projecteKanban.exe.config
+C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\NewTasca.g.cs
+C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\NewTasca.baml
