@@ -19,9 +19,38 @@ namespace projecteKanban
     /// </summary>
     public partial class Register : Window
     {
+       public string usuari;
+       public string contra;
         public Register()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            usuari = UsernameTextBox.Text;
+            contra = PasswordBox.Password;
+            Usuari nouUsuari = new Usuari(usuari, contra);
+
+
+            if (string.IsNullOrWhiteSpace(usuari) || string.IsNullOrWhiteSpace(contra))
+            {
+                MessageBox.Show("El nom d'usuari i la contrasenya no poden estar buits.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (Usuari.ComprovarDuplicats(nouUsuari.Nom))
+            {
+                MessageBox.Show("El nom d'usuari ja existeix.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            else
+            {
+                Usuari.AfegirUsuari(nouUsuari);
+                MessageBox.Show("Usuari registrat correctament.", "Èxit", MessageBoxButton.OK, MessageBoxImage.Information);
+                Window loginWindow = new login();
+                loginWindow.Show();
+                this.Close();
+            }
         }
     }
 }

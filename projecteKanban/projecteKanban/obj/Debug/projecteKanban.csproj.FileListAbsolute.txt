@@ -15,7 +15,6 @@ C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanba
 C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\projecteKanban.csproj.CoreCompileInputs.cache
 C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\projecteKanban.exe
 C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\projecteKanban.pdb
-C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\projecteKanban.exe.config
 C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\NewTasca.g.cs
 C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\NewTasca.baml
 C:\Users\paugu\Desktop\!DAM2\Projecte\Kanban\projecteKanban\projecteKanban\projecteKanban\bin\Debug\projecteKanban.exe.config
@@ -42,3 +41,4 @@ C:\Users\paugu\Desktop\!DAM2\Projecte\Kanban\projecteKanban\projecteKanban\proje
 C:\Users\paugu\Desktop\!DAM2\Projecte\Kanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\Register.baml
 C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\Register.g.cs
 C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\Register.baml
+C:\Users\Nico\Desktop\ProjecteKanban\projecteKanban\projecteKanban\projecteKanban\obj\Debug\projecteKanban.exe.config
