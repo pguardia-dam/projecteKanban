@@ -19,8 +19,8 @@
             <TextBlock Text="Password:" Margin="0,0,0,5"/>
             <PasswordBox Name="PasswordBox" Margin="0,0,0,20"/>
             <WrapPanel HorizontalAlignment="Center" Width="200">
-                <Button Content="Login" Width="80" HorizontalAlignment="Left" Click="Button_Click"/>
-                <Button Content="Register" Width="80" Margin="40,0,0,0" HorizontalAlignment="Right"/>
+                <Button Content="Login" Width="80" HorizontalAlignment="Left" Click="Login_Button_Click"/>
+                <Button Content="Register" Width="80" Margin="40,0,0,0" HorizontalAlignment="Right" Click="Register_Button_Click"/>
             </WrapPanel>
         </StackPanel>
     </Grid>

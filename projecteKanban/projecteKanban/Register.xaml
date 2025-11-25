@@ -18,7 +18,7 @@
             <TextBox Name="UsernameTextBox" Margin="0,0,0,10"/>
             <TextBlock Text="Password:" Margin="0,0,0,5"/>
             <PasswordBox Name="PasswordBox" Margin="0,0,0,20"/>
-                <Button Content="Register" Width="75" HorizontalAlignment="Center" />
+                <Button Content="Register" Width="75" HorizontalAlignment="Center" Click="Button_Click" />
         </StackPanel>
     </Grid>
 </Window>

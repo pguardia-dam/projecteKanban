@@ -19,16 +19,40 @@ namespace projecteKanban
     /// </summary>
     public partial class login : Window
     {
+        public string usuari;
+        public string contra;
         public login()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
+            usuari = UsernameTextBox.Text;
+            contra = PasswordBox.Password;
+            if(Usuari.Autenticar(usuari, contra) == null)
+            {
+                MessageBox.Show("Usuari o contrasenya incorrectes");
+                return;
+            }
+            else if(Usuari.Autenticar(usuari, contra) != null)
+            { 
+                MessageBox.Show("Usuari o contrasenya correctes, fent login"); //treure aixo
+
                 Window window = new MainWindow();
                 window.Show();
-                this.Close();         
+                this.Close();
+            }
+
+
+                     
+        }
+
+        private void Register_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new Register();
+            window.Show();
+            this.Close();
         }
     }
 }
