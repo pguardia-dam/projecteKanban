@@ -27,6 +27,7 @@ namespace projecteKanban
         private void CrearTasca(object sender, RoutedEventArgs e)
         {
             //string codiTasca = CodiTascaTextBox.Text;
+            string nomTasca = NomTascaTextBox.Text;
             string descripcio = DescripcioTextBox.Text;
             DateTime dataInici = (DateTime)DataIniciPicker.SelectedDate;
             DateTime dataFinal = (DateTime)DataEntregaPicker.SelectedDate;
@@ -39,23 +40,24 @@ namespace projecteKanban
 
             var tasca = new Tasca
             {
+                NomTasca = nomTasca,
                 Descripcio = descripcio,
                 DataInici = dataInici,
                 DataFinal = dataFinal,
                 Prioritat = prioritat
             };
 
-            Tasca tascaControl = new Tasca();
+            var tascaControl = new TascaControl();
             tascaControl.DataContext = tasca;
 
             var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
             if (mainWindow != null)
-            {
                 mainWindow.col1.Children.Add(tascaControl);
-            }
 
-            this.Close();
-
+            Close();
         }
+
+
     }
 }
+

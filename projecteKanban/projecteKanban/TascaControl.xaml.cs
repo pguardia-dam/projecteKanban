@@ -18,17 +18,9 @@ namespace projecteKanban
     /// <summary>
     /// Lógica de interacción para Tasca.xaml
     /// </summary>
-    public partial class Tasca : UserControl
+    public partial class TascaControl : UserControl
     {
-        public string CodiTasca { get; set; }
-        public string Descripcio { get; set; }
-        public string Responsable { get; set; }
-        public DateTime DataInici { get; set; }
-        public DateTime DataFinal { get; set; }
-        public string Prioritat { get; set; }
-
-
-        public Tasca()
+        public TascaControl()
         {
             InitializeComponent();
         }
