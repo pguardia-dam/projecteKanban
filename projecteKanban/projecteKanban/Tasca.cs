@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projecteKanban
 {
-    public class Tasca
+    public class Tasca //model de la tasca
     {
         public string CodiTasca { get; set; }
         public string NomTasca { get; set; }
