@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projecteKanban
 {
-    public class Usuari
+    public class Usuari // model de dades per a un usuari
     {
         public string Nom;
         public string Contrasenya;
