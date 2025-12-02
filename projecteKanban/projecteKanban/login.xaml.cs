@@ -24,6 +24,8 @@ namespace projecteKanban
         public login()
         {
             InitializeComponent();
+            Usuari.UsuariList.Add(new Usuari("admin", "admin"));
+
         }
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
@@ -37,7 +39,7 @@ namespace projecteKanban
             }
             else if(Usuari.Autenticar(usuari, contra) != null)
             { 
-                MessageBox.Show("Usuari o contrasenya correctes, fent login"); //treure aixo
+                //MessageBox.Show("Usuari o contrasenya correctes, fent login"); //treure aixo
 
                 Window window = new MainWindow();
                 window.Show();

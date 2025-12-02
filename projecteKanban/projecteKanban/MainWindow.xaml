@@ -6,5 +6,60 @@
         xmlns:local="clr-namespace:projecteKanban"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="70" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <WrapPanel>
+                <Button Name="btnAfegir" Content="Afegir Tasca" Click="btnAfegir_Click" Margin="15"/>
+            </WrapPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="42*" />
+                <ColumnDefinition Width="224*"/>
+                <ColumnDefinition Width="267*" />
+                <ColumnDefinition Width="267*" />
+            </Grid.ColumnDefinitions>
+
+
+            <StackPanel  Grid.Column="0" Margin="20,20,20,20" Grid.ColumnSpan="2">
+                <TextBlock HorizontalAlignment="Center">Per fer</TextBlock>
+            </StackPanel>
+            <StackPanel  Grid.Column="2" Margin="20,20,20,20">
+                <TextBlock HorizontalAlignment="Center">En proces</TextBlock>
+
+            </StackPanel>
+            <StackPanel  Grid.Column="3" Margin="20,20,20,20">
+                <TextBlock HorizontalAlignment="Center">Fetes</TextBlock>
+
+            </StackPanel>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <StackPanel  Grid.Column="0" Margin="20" Name="col1">
+
+            </StackPanel>
+            <StackPanel  Grid.Column="1" Margin="20" Name="col2">
+
+            </StackPanel>
+            <StackPanel  Grid.Column="2" Margin="20" Name="col3">
+
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+    <!-- <local:Tasca />   -->
 </Window>
+    

@@ -23,5 +23,39 @@ namespace projecteKanban
         {
             InitializeComponent();
         }
+
+        private void CrearTasca(object sender, RoutedEventArgs e)
+        {
+            //string codiTasca = CodiTascaTextBox.Text;
+            string descripcio = DescripcioTextBox.Text;
+            DateTime dataInici = (DateTime)DataIniciPicker.SelectedDate;
+            DateTime dataFinal = (DateTime)DataEntregaPicker.SelectedDate;
+            string prioritat = "";
+            if (UrgentRadioButton.IsChecked == true) prioritat = "Urgent";
+            else if (AltaRadioButton.IsChecked == true) prioritat = "Alta";
+            else if (MitjaRadioButton.IsChecked == true) prioritat = "Mitja";
+            else if (BaixaRadioButton.IsChecked == true) prioritat = "Baixa";
+            else if (OpcionalRadioButton.IsChecked == true) prioritat = "Opcional/NA";
+
+            var tasca = new Tasca
+            {
+                Descripcio = descripcio,
+                DataInici = dataInici,
+                DataFinal = dataFinal,
+                Prioritat = prioritat
+            };
+
+            Tasca tascaControl = new Tasca();
+            tascaControl.DataContext = tasca;
+
+            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            if (mainWindow != null)
+            {
+                mainWindow.col1.Children.Add(tascaControl);
+            }
+
+            this.Close();
+
+        }
     }
 }

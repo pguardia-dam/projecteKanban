@@ -20,6 +20,14 @@ namespace projecteKanban
     /// </summary>
     public partial class Tasca : UserControl
     {
+        public string CodiTasca { get; set; }
+        public string Descripcio { get; set; }
+        public string Responsable { get; set; }
+        public DateTime DataInici { get; set; }
+        public DateTime DataFinal { get; set; }
+        public string Prioritat { get; set; }
+
+
         public Tasca()
         {
             InitializeComponent();

@@ -12,6 +12,7 @@ namespace projecteKanban
         public string Contrasenya;
 
         public static List<Usuari> UsuariList = new List<Usuari>();
+
         public Usuari(string nom, string contrasenya)
         {
             Nom = nom;
@@ -29,7 +30,7 @@ namespace projecteKanban
         }
         public string GetContrasenya()
         {
-                       return Contrasenya;
+            return Contrasenya;
         }
         public void SetNom(string nom)
         {

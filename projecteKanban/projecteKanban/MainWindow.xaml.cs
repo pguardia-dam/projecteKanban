@@ -25,11 +25,19 @@ namespace projecteKanban
             InitializeComponent();
         }
 
+        
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window window = new login();
             window.Show();
             this.Close();
+        }
+
+        private void btnAfegir_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new NewTasca();
+            window.Show();
         }
     }
 }
