@@ -24,7 +24,7 @@ namespace projecteKanban
         {
             InitializeComponent();
         }
-
+        // Moure tasca a l'esquerra
         private void btnLeft(object sender, RoutedEventArgs e)
         {
             var tasca = DataContext as Tasca;
@@ -46,6 +46,7 @@ namespace projecteKanban
                 mainWindow.col1.Children.Add(tascaControl);
             }
         }
+        // Moure tasca a la dreta
         private void btnRight(object sender, RoutedEventArgs e)
         {
             var tasca = DataContext as Tasca;
