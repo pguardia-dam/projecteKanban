@@ -14,6 +14,7 @@ namespace projecteKanban
         public string Responsable { get; set; }
         public DateTime DataInici { get; set; }
         public DateTime DataFinal { get; set; }
-        public string Prioritat { get; set; }
+        public int Prioritat { get; set; }
+        public int Estat { get; set; }
     }
 }
