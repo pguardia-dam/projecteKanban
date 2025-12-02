@@ -44,32 +44,43 @@ namespace projecteKanban
                 Descripcio = descripcio,
                 DataInici = dataInici,
                 DataFinal = dataFinal,
-                Prioritat = prioritat
+                Prioritat = prioritat,
+                Estat = 0
             };
-
             var tascaControl = new TascaControl();
             tascaControl.DataContext = tasca;
 
             if (tasca.Prioritat == 4)
             {
+                Tasca.ContadorUrgents++;
                 tascaControl.Background = Brushes.Red;
+                tasca.CodiTasca = "U" + Tasca.ContadorUrgents.ToString();
             }
             else if (tasca.Prioritat == 3)
             {
+                Tasca.ContadorAlts++;
                 tascaControl.Background = Brushes.Orange;
+                tasca.CodiTasca = "A" + Tasca.ContadorAlts.ToString();
             }
             else if (tasca.Prioritat == 2)
             {
+                Tasca.ContadorMig++;
                 tascaControl.Background = Brushes.Yellow;
+                tasca.CodiTasca = "M" + Tasca.ContadorMig.ToString();
             }
             else if (tasca.Prioritat == 1)
             {
+                Tasca.ContadorBaix++;
                 tascaControl.Background = Brushes.Green;
+                tasca.CodiTasca = "B" + Tasca.ContadorBaix.ToString();
             }
-            else if(tasca.Prioritat == 0)
+            else if (tasca.Prioritat == 0)
             {
-                tascaControl.Background = Brushes.White;
+                Tasca.ContadorOpcional++;
+                tascaControl.Background = Brushes.Gray;
+                tasca.CodiTasca = "O" + Tasca.ContadorOpcional.ToString();
             }
+
 
             var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
             if (mainWindow != null)

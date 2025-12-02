@@ -3,32 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projectekanban\\tasca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\tasca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projectekanban\\tascacontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\tascacontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projectekanban\\tascacontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\tascacontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\newtasca.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\newtasca.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projectekanban\\newtasca.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\newtasca.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\tasca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\tasca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\register.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\register.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\tascacontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\tascacontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\tascacontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\tascacontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\usuari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\usuari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\usermanager.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\usermanager.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projectekanban\\usuari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\usuari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\newtasca.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\newtasca.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|c:\\users\\nico\\desktop\\projectekanban\\projectekanban\\projectekanban\\projectekanban\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{109D8A66-20B8-4F78-995E-63971D419924}|projecteKanban\\projecteKanban.csproj|solutionrelative:projectekanban\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -57,90 +81,170 @@
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "UserManager.xaml",
               "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\UserManager.xaml",
               "RelativeDocumentMoniker": "projecteKanban\\UserManager.xaml",
               "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\UserManager.xaml",
               "RelativeToolTip": "projecteKanban\\UserManager.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-02T15:43:55.977Z",
+              "WhenOpened": "2025-12-02T17:34:50.189Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Usuari.cs",
               "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\Usuari.cs",
               "RelativeDocumentMoniker": "projecteKanban\\Usuari.cs",
               "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\Usuari.cs",
               "RelativeToolTip": "projecteKanban\\Usuari.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T15:31:47.803Z"
+              "WhenOpened": "2025-12-02T17:34:49.375Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "NewTasca.xaml",
-              "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\NewTasca.xaml",
-              "RelativeDocumentMoniker": "projecteKanban\\NewTasca.xaml",
-              "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\NewTasca.xaml",
-              "RelativeToolTip": "projecteKanban\\NewTasca.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-02T15:30:36.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Tasca.cs",
-              "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\Tasca.cs",
-              "RelativeDocumentMoniker": "projecteKanban\\Tasca.cs",
-              "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\Tasca.cs",
-              "RelativeToolTip": "projecteKanban\\Tasca.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
+              "Title": "TascaControl.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\TascaControl.xaml.cs",
+              "RelativeDocumentMoniker": "projecteKanban\\TascaControl.xaml.cs",
+              "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\TascaControl.xaml.cs",
+              "RelativeToolTip": "projecteKanban\\TascaControl.xaml.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAswEQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T15:23:22.306Z",
+              "WhenOpened": "2025-12-02T17:34:01.221Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "TascaControl.xaml",
               "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\TascaControl.xaml",
               "RelativeDocumentMoniker": "projecteKanban\\TascaControl.xaml",
               "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\TascaControl.xaml",
               "RelativeToolTip": "projecteKanban\\TascaControl.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-02T15:18:35.321Z",
+              "WhenOpened": "2025-12-02T17:33:38.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tasca.cs",
+              "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\Tasca.cs",
+              "RelativeDocumentMoniker": "projecteKanban\\Tasca.cs",
+              "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\Tasca.cs",
+              "RelativeToolTip": "projecteKanban\\Tasca.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T17:33:09.796Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TascaControl.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\TascaControl.xaml.cs",
-              "RelativeDocumentMoniker": "projecteKanban\\TascaControl.xaml.cs",
-              "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\TascaControl.xaml.cs",
-              "RelativeToolTip": "projecteKanban\\TascaControl.xaml.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAowBUAAAAFAAAAAAAAAA==",
+              "Title": "Register.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\Register.xaml.cs",
+              "RelativeDocumentMoniker": "projecteKanban\\Register.xaml.cs",
+              "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\Register.xaml.cs",
+              "RelativeToolTip": "projecteKanban\\Register.xaml.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T15:13:04.993Z",
+              "WhenOpened": "2025-12-02T17:33:02.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "Register.xaml",
+              "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\Register.xaml",
+              "RelativeDocumentMoniker": "projecteKanban\\Register.xaml",
+              "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\Register.xaml",
+              "RelativeToolTip": "projecteKanban\\Register.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-02T17:33:00.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "NewTasca.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\NewTasca.xaml.cs",
               "RelativeDocumentMoniker": "projecteKanban\\NewTasca.xaml.cs",
               "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\NewTasca.xaml.cs",
               "RelativeToolTip": "projecteKanban\\NewTasca.xaml.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAUwEYAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAArwEAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T15:13:03.603Z",
+              "WhenOpened": "2025-12-02T17:30:49.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NewTasca.xaml",
+              "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\NewTasca.xaml",
+              "RelativeDocumentMoniker": "projecteKanban\\NewTasca.xaml",
+              "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\NewTasca.xaml",
+              "RelativeToolTip": "projecteKanban\\NewTasca.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-02T17:30:37.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "projecteKanban\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\MainWindow.xaml.cs",
+              "RelativeToolTip": "projecteKanban\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T17:30:28.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "projecteKanban\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\MainWindow.xaml",
+              "RelativeToolTip": "projecteKanban\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-02T17:30:15.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\login.xaml.cs",
+              "RelativeDocumentMoniker": "projecteKanban\\login.xaml.cs",
+              "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\login.xaml.cs",
+              "RelativeToolTip": "projecteKanban\\login.xaml.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T17:30:05.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\login.xaml",
+              "RelativeDocumentMoniker": "projecteKanban\\login.xaml",
+              "ToolTip": "C:\\Users\\Nico\\Desktop\\ProjecteKanban\\projecteKanban\\projecteKanban\\projecteKanban\\login.xaml",
+              "RelativeToolTip": "projecteKanban\\login.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-02T17:29:58.828Z",
               "EditorCaption": ""
             }
           ]

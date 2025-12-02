@@ -16,5 +16,11 @@ namespace projecteKanban
         public DateTime DataFinal { get; set; }
         public int Prioritat { get; set; }
         public int Estat { get; set; }
+
+        public static int ContadorUrgents = 0;
+        public static int ContadorAlts = 0;
+        public static int ContadorMig = 0;
+        public static int ContadorBaix = 0;
+        public static int ContadorOpcional = 0;
     }
 }
