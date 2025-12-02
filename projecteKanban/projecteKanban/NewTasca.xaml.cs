@@ -80,7 +80,7 @@ namespace projecteKanban
                 tascaControl.Background = Brushes.Gray;
                 tasca.CodiTasca = "O" + Tasca.ContadorOpcional.ToString();
             }
-
+            //prova merge
 
             var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
             if (mainWindow != null)
