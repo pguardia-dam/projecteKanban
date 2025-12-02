@@ -24,5 +24,47 @@ namespace projecteKanban
         {
             InitializeComponent();
         }
+
+        private void btnLeft(object sender, RoutedEventArgs e)
+        {
+            var tasca = DataContext as Tasca;
+            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            if (mainWindow == null || tasca == null) return;
+
+            var tascaControl = this;
+
+            (tascaControl.Parent as Panel).Children.Remove(tascaControl);
+
+            if (tasca.Estat == 2)
+            {
+                tasca.Estat = 1;
+                mainWindow.col2.Children.Add(tascaControl);
+            }
+            else if (tasca.Estat == 1)
+            {
+                tasca.Estat = 0;
+                mainWindow.col1.Children.Add(tascaControl);
+            }
+        }
+        private void btnRight(object sender, RoutedEventArgs e)
+        {
+            var tasca = DataContext as Tasca;
+            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            if (mainWindow == null) return;
+
+            var tascaControl = this;
+
+            (tascaControl.Parent as Panel).Children.Remove(tascaControl);
+
+            if (tasca.Estat == 0 && tascaControl != null)
+            {
+                tasca.Estat = 1;
+                mainWindow.col2.Children.Add(tascaControl);
+            }else if (tasca.Estat == 1 && tascaControl != null)
+            {
+                tasca.Estat = 2;
+                mainWindow.col3.Children.Add(tascaControl);
+            }
+        }
     }
 }
