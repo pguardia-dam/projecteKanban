@@ -7,6 +7,43 @@
         mc:Ignorable="d"
         Title="UserManager" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <!-- Lista de usuarios -->
+        <DataGrid x:Name="dgUsers" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" 
+      AutoGenerateColumns="False" CanUserResizeColumns="True" CanUserAddRows="False" Grid.Row="1"  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nom" IsReadOnly="True" Binding="{Binding Name}" Width="100"/>
+                <!--Añadimos botones editar y eliminar-->
+                <!--Boton Editar -->
+                <DataGridTemplateColumn Header="Editar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="EditarUser" Content="Editar" Click="EditarUser_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--Boton Eliminar -->
+                <DataGridTemplateColumn Header="Eliminar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  x:Name="EliminarUser" Content="Eliminar" Click="EliminarUser_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--Boton Añadir-->
+                <DataGridTemplateColumn Header="Afegir">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="AfegirUser" Content="Afegir" Click="AfegirUser_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

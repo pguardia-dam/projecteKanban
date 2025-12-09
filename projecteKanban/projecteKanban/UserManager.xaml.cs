@@ -19,9 +19,33 @@ namespace projecteKanban
     /// </summary>
     public partial class UserManager : Window
     {
+        public class Usuario
+        {
+            public string Nombre { get; set; }
+        }
+
+        public List<Usuario> Usuarios { get; set; }
+
         public UserManager()
         {
             InitializeComponent();
+
+      
+        }
+
+        private void EditarUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EliminarUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AfegirUser_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

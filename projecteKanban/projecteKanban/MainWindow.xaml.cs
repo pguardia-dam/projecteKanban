@@ -39,5 +39,11 @@ namespace projecteKanban
             Window window = new NewTasca();
             window.Show();
         }
+
+        private void btnUsuari_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new UserManager();
+            window.Show();
+        }
     }
 }
