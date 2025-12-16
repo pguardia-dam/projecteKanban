@@ -22,6 +22,7 @@ namespace projecteKanban
     {
         public string usuari;
         public string contra;
+        public static Usuari UsuariActual;
         public login()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace projecteKanban
             else if(Usuari.Autenticar(usuari, contra) != null)
             { 
                 //MessageBox.Show("Usuari o contrasenya correctes, fent login"); //treure aixo
-
+                UsuariActual = Usuari.Autenticar(usuari, contra);
                 Window window = new MainWindow();
                 window.Show();
                 this.Close();

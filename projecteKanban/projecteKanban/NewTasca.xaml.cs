@@ -38,16 +38,17 @@ namespace projecteKanban
             else if (BaixaRadioButton.IsChecked == true) prioritat = 1;
             else if (OpcionalRadioButton.IsChecked == true) prioritat = 0;
 
-            var tasca = new Tasca
-            {
-                NomTasca = nomTasca,
-                Descripcio = descripcio,
-                DataInici = dataInici,
-                DataFinal = dataFinal,
-                Prioritat = prioritat,
-                Estat = 0
-            };
-            var tascaControl = new TascaControl();
+            Tasca tasca = new Tasca(nomTasca,
+                descripcio,
+                login.UsuariActual.GetNom(),
+                dataInici,
+                dataFinal,
+                prioritat,
+                0);
+            
+                
+            
+            TascaControl tascaControl = new TascaControl();
             tascaControl.DataContext = tasca;
 
             if (tasca.Prioritat == 4)
