@@ -21,6 +21,8 @@ namespace projecteKanban
         public int Prioritat { get; set; }
         public int Estat { get; set; }
 
+        public int IdUsuari { get; set; }
+
         public static int ContadorUrgents = 0;
         public static int ContadorAlts = 0;
         public static int ContadorMig = 0;
@@ -32,6 +34,17 @@ namespace projecteKanban
             NomTasca = nomTasca;
             Descripcio = descripcio;
             Responsable = responsable;
+            DataInici = dataInici;
+            DataFinal = dataFinal;
+            Prioritat = prioritat;
+            Estat = estat;
+        }
+
+        public Tasca(string nomTasca, string descripcio, int idUsuari, DateTime dataInici, DateTime dataFinal, int prioritat, int estat)
+        {
+            NomTasca = nomTasca;
+            Descripcio = descripcio;
+            IdUsuari = idUsuari;
             DataInici = dataInici;
             DataFinal = dataFinal;
             Prioritat = prioritat;

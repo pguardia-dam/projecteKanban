@@ -49,18 +49,19 @@ namespace projecteKanban
                 dataFinal,
                 prioritat,
                 0);
-            
-                
-            
+
+
+
+            var control = new TascaControl();
+            control.DataContext = tasca;
             TascaControl tascaControl = new TascaControl();
-            tascaControl.DataContext = tasca;
+          
 
             if (tasca.Prioritat == 4)
             {
                 Tasca.ContadorUrgents++;
                 tascaControl.Background = Brushes.Red;
                 tasca.CodiTasca = "U" + Tasca.ContadorUrgents.ToString();
-                
             }
             else if (tasca.Prioritat == 3)
             {

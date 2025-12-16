@@ -4,6 +4,10 @@
              MinWidth="200" MinHeight="100">
     <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="5">
         <StackPanel>
+            <WrapPanel HorizontalAlignment="Right">
+                <Button x:Name="btnEditarTasca" Content="Editar" HorizontalAlignment="Right" Margin="0,0,10,0" Click="btnEditarTasca_Click"/>
+                <Button x:Name="btnEliminarTasca" Content="X" HorizontalAlignment="Right"  Click="btnEliminarTasca_Click"/>
+            </WrapPanel>
             <TextBlock Text="{Binding CodiTasca}" FontWeight="Bold"/>
             <TextBlock Text="{Binding NomTasca}" FontWeight="Bold"/>
             <TextBlock Text="{Binding Descripcio}" />
