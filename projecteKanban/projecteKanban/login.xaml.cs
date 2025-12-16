@@ -33,15 +33,15 @@ namespace projecteKanban
         {
             usuari = UsernameTextBox.Text;
             contra = PasswordBox.Password;
-            if(Usuari.Autenticar(usuari, contra) == null)
+            if(!Usuari.Autenticar(usuari, contra))
             {
                 MessageBox.Show("Usuari o contrasenya incorrectes");
                 return;
             }
-            else if(Usuari.Autenticar(usuari, contra) != null)
+            else if(Usuari.Autenticar(usuari, contra))
             { 
                 //MessageBox.Show("Usuari o contrasenya correctes, fent login"); //treure aixo
-                UsuariActual = Usuari.Autenticar(usuari, contra);
+                login.UsuariActual = Usuari.GetUsuari(usuari, contra);
                 Window window = new MainWindow();
                 window.Show();
                 this.Close();

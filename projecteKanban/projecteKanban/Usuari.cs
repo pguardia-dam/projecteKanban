@@ -37,6 +37,38 @@ namespace projecteKanban
 
         }
 
+        public static Usuari GetUsuari(string nom, string contrasenya)
+        {
+            MySqlConnection conexio = new MySqlConnection(connectionString);
+            conexio.Open();
+
+            string query = "SELECT * FROM Usuari WHERE nom = @nom AND contrasenya = @contra";
+            MySqlCommand cmd = new MySqlCommand(query, conexio);
+
+            cmd.Parameters.AddWithValue("@nom", nom);
+            cmd.Parameters.AddWithValue("@contra", contrasenya);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            Usuari usuari = null;
+
+            if (reader.Read())
+            {
+                usuari = new Usuari(
+                    reader.GetString("nom"),
+                    reader.GetString("contrasenya"),
+                    reader.GetBoolean("responsable")
+                );
+
+                // Si quieres guardar el id también:
+                usuari.id = reader.GetInt32("idusuari");
+            }
+
+            conexio.Close();
+            return usuari;
+        }
+
+
         public string GetNom()
         {
             return Nom;
@@ -76,18 +108,20 @@ namespace projecteKanban
         }
 
 
-        public static Usuari Autenticar(string nom, string contrasenya)
+        public static bool Autenticar(string nom, string contrasenya)
         {
-            Usuari user = new Usuari("admin", "admin", true); //per evitar errors en compilar abans de tenir la base de dades
-            return user;
-            //foreach (Usuari u in UsuariList)
-            //{
-            //    if (u.Nom == nom && u.Contrasenya == contrasenya)
-            //    {
-            //        return u;
-            //    }
-            //}
-            //return null;
+            MySqlConnection conexio = new MySqlConnection(connectionString);
+            conexio.Open();
+
+            string query = "SELECT COUNT(*) FROM Usuari WHERE nom = @nom";
+            MySqlCommand comanda = new MySqlCommand(query, conexio);
+            comanda.Parameters.AddWithValue("@nom", nom);
+
+            int count = Convert.ToInt32(comanda.ExecuteScalar());
+
+            conexio.Close();
+
+            return count > 0;
         }
 
     }
