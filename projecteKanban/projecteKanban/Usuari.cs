@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,20 +9,32 @@ namespace projecteKanban
 {
     public class Usuari 
     {
+        int id;
         public string Nom;
         public string Contrasenya;
+        public bool Responsable;
 
-        public static List<Usuari> UsuariList = new List<Usuari>();
-
-        public Usuari(string nom, string contrasenya)
+        private static string connectionString = "Server=ellaboratori.cat;Database=pau;Uid=pau;Pwd=campa123;";
+        public Usuari(string nom, string contrasenya, bool responsable)
         {
             Nom = nom;
             Contrasenya = contrasenya;
+            Responsable = responsable;
         }
 
         public static void AfegirUsuari(Usuari usuari)
         {
-            UsuariList.Add(usuari);
+            MySqlConnection conn = new MySqlConnection(connectionString); 
+            
+            conn.Open(); 
+            string query = "INSERT INTO Usuari (nom, contrasenya, responsable) VALUES (@nom, @contra, @resp)"; 
+            MySqlCommand cmd = new MySqlCommand(query, conn); 
+            cmd.Parameters.AddWithValue("@nom", usuari.Nom); 
+            cmd.Parameters.AddWithValue("@contra", usuari.Contrasenya);
+            cmd.Parameters.AddWithValue("@resp", usuari.Responsable);
+            cmd.ExecuteNonQuery(); 
+            conn.Close();
+
         }
 
         public string GetNom()
@@ -43,26 +56,29 @@ namespace projecteKanban
 
         public static bool ComprovarDuplicats(string nom)
         {
-            foreach (Usuari u in UsuariList)
-            {
-                if (u.Nom == nom)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return true;
+            //foreach (Usuari u in UsuariList)
+            //{
+            //    if (u.Nom == nom)
+            //    {
+            //        return true;
+            //    }
+            //}
+            //return false;
         }
 
         public static Usuari Autenticar(string nom, string contrasenya)
         {
-            foreach (Usuari u in UsuariList)
-            {
-                if (u.Nom == nom && u.Contrasenya == contrasenya)
-                {
-                    return u;
-                }
-            }
-            return null;
+            Usuari user = new Usuari("admin", "admin", true); //per evitar errors en compilar abans de tenir la base de dades
+            return user;
+            //foreach (Usuari u in UsuariList)
+            //{
+            //    if (u.Nom == nom && u.Contrasenya == contrasenya)
+            //    {
+            //        return u;
+            //    }
+            //}
+            //return null;
         }
 
     }

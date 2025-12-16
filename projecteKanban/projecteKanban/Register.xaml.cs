@@ -19,8 +19,10 @@ namespace projecteKanban
     /// </summary>
     public partial class Register : Window
     {
-       public string usuari;
-       public string contra;
+        private static string connectionString = "Server=ellaboratori.cat;Database=pau;Uid=pau;Pwd=campa123;";
+
+        public string usuari;
+        public string contra;
         public Register()
         {
             InitializeComponent();
@@ -30,7 +32,9 @@ namespace projecteKanban
         {
             usuari = UsernameTextBox.Text;
             contra = PasswordBox.Password;
-            Usuari nouUsuari = new Usuari(usuari, contra);
+            Usuari nouUsuari = new Usuari(usuari, contra, true);
+
+            Usuari.AfegirUsuari(nouUsuari);
 
 
             if (string.IsNullOrWhiteSpace(usuari) || string.IsNullOrWhiteSpace(contra))

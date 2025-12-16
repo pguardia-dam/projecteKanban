@@ -17,6 +17,7 @@ namespace projecteKanban
     /// <summary>
     /// Lógica de interacción para login.xaml
     /// </summary>
+    
     public partial class login : Window
     {
         public string usuari;
@@ -24,7 +25,6 @@ namespace projecteKanban
         public login()
         {
             InitializeComponent();
-            Usuari.UsuariList.Add(new Usuari("admin", "admin"));
 
         }
 
