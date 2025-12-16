@@ -90,6 +90,10 @@ namespace projecteKanban
         {
             return id;
         }   
+        public void SetId(int ID)
+        {
+             id = ID;
+        }   
 
         public static bool ComprovarDuplicats(string nom)
         {

@@ -1,23 +1,10 @@
-﻿using Org.BouncyCastle.Asn1.Cmp;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace projecteKanban
 {
-    /// <summary>
-    /// Lógica de interacción para NewTasca.xaml
-    /// </summary>
     public partial class NewTasca : Window
     {
         public NewTasca()
@@ -25,82 +12,82 @@ namespace projecteKanban
             InitializeComponent();
         }
 
-        public static int prioritatSeleccionada = -1;
-        public static string codiTascaGenerat = "";
-        public static int estatSeleccionat = -1;
         private void CrearTasca(object sender, RoutedEventArgs e)
         {
-            //string codiTasca = CodiTascaTextBox.Text;
-            string nomTasca = NomTascaTextBox.Text;
-            string descripcio = DescripcioTextBox.Text;
-            DateTime dataInici = (DateTime)DataIniciPicker.SelectedDate;
-            DateTime dataFinal = (DateTime)DataEntregaPicker.SelectedDate;
-            int prioritat = -1;
-            if (UrgentRadioButton.IsChecked == true) prioritat = 4;
+            string nom = NomTascaTextBox.Text;
+            string desc = DescripcioTextBox.Text;
+            DateTime inici = (DateTime)DataIniciPicker.SelectedDate;
+            DateTime final = (DateTime)DataEntregaPicker.SelectedDate;
+
+            int prioritat = -1; if (UrgentRadioButton.IsChecked == true) prioritat = 4;
             else if (AltaRadioButton.IsChecked == true) prioritat = 3;
             else if (MitjaRadioButton.IsChecked == true) prioritat = 2;
             else if (BaixaRadioButton.IsChecked == true) prioritat = 1;
             else if (OpcionalRadioButton.IsChecked == true) prioritat = 0;
 
-            Tasca tasca = new Tasca(nomTasca,
-                descripcio,
+            Tasca t = new Tasca(
+                nom,
+                desc,
                 login.UsuariActual.GetNom(),
-                dataInici,
-                dataFinal,
+                inici,
+                final,
                 prioritat,
-                0);
+                0
+            );
+
+            // Generar codi únic
+            // Generar codi segons prioritat
+            switch (prioritat)
+            {
+                case 4:
+                    Tasca.ContadorUrgents++;
+                    t.CodiTasca = "U" + Tasca.ContadorUrgents;
+                    break;
+
+                case 3:
+                    Tasca.ContadorAlts++;
+                    t.CodiTasca = "A" + Tasca.ContadorAlts;
+                    break;
+
+                case 2:
+                    Tasca.ContadorMig++;
+                    t.CodiTasca = "M" + Tasca.ContadorMig;
+                    break;
+
+                case 1:
+                    Tasca.ContadorBaix++;
+                    t.CodiTasca = "B" + Tasca.ContadorBaix;
+                    break;
+
+                case 0:
+                    Tasca.ContadorOpcional++;
+                    t.CodiTasca = "O" + Tasca.ContadorOpcional;
+                    break;
+            }
 
 
-
+            // Crear control visual
             var control = new TascaControl();
-            control.DataContext = tasca;
-            TascaControl tascaControl = new TascaControl();
-          
+            control.DataContext = t;
 
-            if (tasca.Prioritat == 4)
+            switch (prioritat)
             {
-                Tasca.ContadorUrgents++;
-                tascaControl.Background = Brushes.Red;
-                tasca.CodiTasca = "U" + Tasca.ContadorUrgents.ToString();
-            }
-            else if (tasca.Prioritat == 3)
-            {
-                Tasca.ContadorAlts++;
-                tascaControl.Background = Brushes.Orange;
-                tasca.CodiTasca = "A" + Tasca.ContadorAlts.ToString();
-            }
-            else if (tasca.Prioritat == 2)
-            {
-                Tasca.ContadorMig++;
-                tascaControl.Background = Brushes.Yellow;
-                tasca.CodiTasca = "M" + Tasca.ContadorMig.ToString();
-            }
-            else if (tasca.Prioritat == 1)
-            {
-                Tasca.ContadorBaix++;
-                tascaControl.Background = Brushes.Green;
-                tasca.CodiTasca = "B" + Tasca.ContadorBaix.ToString();
-            }
-            else if (tasca.Prioritat == 0)
-            {
-                Tasca.ContadorOpcional++;
-                tascaControl.Background = Brushes.Gray;
-                tasca.CodiTasca = "O" + Tasca.ContadorOpcional.ToString();
+                case 4: control.Background = Brushes.Red; break;
+                case 3: control.Background = Brushes.Orange; break;
+                case 2: control.Background = Brushes.Yellow; break;
+                case 1: control.Background = Brushes.Green; break;
+                default: control.Background = Brushes.Gray; break;
             }
 
-            prioritatSeleccionada = tasca.Prioritat;
-            codiTascaGenerat = tasca.CodiTasca;
-            estatSeleccionat = tasca.Estat;
-            Tasca.AfegirTasca(tasca);
+            // Guardar a BD
+            Tasca.AfegirTasca(t);
 
-            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-            if (mainWindow != null)
-                mainWindow.col1.Children.Add(tascaControl);
+            // Afegir al tauler
+            var main = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            if (main != null)
+                main.col1.Children.Add(control);
 
             Close();
         }
-
-
     }
 }
-

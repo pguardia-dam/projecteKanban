@@ -1,17 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace projecteKanban
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private static string connectionString = "Server=ellaboratori.cat;Database=pau;Uid=pau;Pwd=campa123;";
@@ -19,43 +14,37 @@ namespace projecteKanban
         public MainWindow()
         {
             InitializeComponent();
-            RefrescarKanban(); // refresca al abrir la ventana
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Window window = new login();
-            window.Show();
-            this.Close();
-        }
-
-        private void btnAfegir_Click(object sender, RoutedEventArgs e)
-        {
-            Window window = new NewTasca();
-            window.Show();
-            // cuando cierres la ventana de nueva tasca, puedes volver a llamar a RefrescarKanban()
+            RefrescarKanban();
         }
 
         private void btnUsuari_Click(object sender, RoutedEventArgs e)
         {
-            Window window = new UserManager();
-            window.Show();
+            new UserManager().Show();
+        }
+
+        private void btnAfegir_Click(object sender, RoutedEventArgs e)
+        {
+            new NewTasca().Show();
         }
 
         public static void RefrescarKanban()
         {
-            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault(); 
-            if (mainWindow == null) 
-                return;
+            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            if (mainWindow == null) return;
+
             mainWindow.col1.Children.Clear();
-            mainWindow.col2.Children.Clear(); 
+            mainWindow.col2.Children.Clear();
             mainWindow.col3.Children.Clear();
 
+
+
             List<Tasca> tasques = new List<Tasca>();
+
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT coditasca, nom, descripcio, idUsuari, datacreacio, datafin, idPrioritat, idEstat  FROM Tasca";
+                string query = "SELECT coditasca, nom, descripcio, idUsuari, datacreacio, datafin, idPrioritat, idEstat FROM Tasca";
+
                 using (var cmd = new MySqlCommand(query, conn))
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -72,50 +61,27 @@ namespace projecteKanban
                         );
 
                         t.CodiTasca = reader.GetString("coditasca");
-
                         tasques.Add(t);
                     }
                 }
             }
-
-
 
             foreach (var t in tasques)
             {
                 var tascaControl = new TascaControl();
                 tascaControl.DataContext = t;
 
-                if (t.Prioritat == 4)
+                // Colors segons prioritat
+                switch (t.Prioritat)
                 {
-                    Tasca.ContadorUrgents++;
-                    tascaControl.Background = Brushes.Red;
-                    t.CodiTasca = "U" + Tasca.ContadorUrgents.ToString();
-                }
-                else if (t.Prioritat == 3)
-                {
-                    Tasca.ContadorAlts++;
-                    tascaControl.Background = Brushes.Orange;
-                    t.CodiTasca = "A" + Tasca.ContadorAlts.ToString();
-                }
-                else if (t.Prioritat == 2)
-                {
-                    Tasca.ContadorMig++;
-                    tascaControl.Background = Brushes.Yellow;
-                    t.CodiTasca = "M" + Tasca.ContadorMig.ToString();
-                }
-                else if (t.Prioritat == 1)
-                {
-                    Tasca.ContadorBaix++;
-                    tascaControl.Background = Brushes.Green;
-                    t.CodiTasca = "B" + Tasca.ContadorBaix.ToString();
-                }
-                else if (t.Prioritat == 0)
-                {
-                    Tasca.ContadorOpcional++;
-                    tascaControl.Background = Brushes.Gray;
-                    t.CodiTasca = "O" + Tasca.ContadorOpcional.ToString();
+                    case 4: tascaControl.Background = Brushes.Red; break;
+                    case 3: tascaControl.Background = Brushes.Orange; break;
+                    case 2: tascaControl.Background = Brushes.Yellow; break;
+                    case 1: tascaControl.Background = Brushes.Green; break;
+                    default: tascaControl.Background = Brushes.Gray; break;
                 }
 
+                // Afegir a la columna correcta
                 switch (t.Estat)
                 {
                     case 0: mainWindow.col1.Children.Add(tascaControl); break;
@@ -123,7 +89,6 @@ namespace projecteKanban
                     case 2: mainWindow.col3.Children.Add(tascaControl); break;
                 }
             }
-
         }
     }
 }
