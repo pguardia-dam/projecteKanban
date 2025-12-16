@@ -27,31 +27,32 @@ namespace projecteKanban
         public static int ContadorBaix = 0;
         public static int ContadorOpcional = 0;
 
-        public Tasca( string nomTasca, string descripcio, string responsable, DateTime dataInici, DateTime dataFinal, int prioritat, int estat)
+        public Tasca(string nomTasca, string descripcio, string responsable, DateTime dataInici, DateTime dataFinal, int prioritat, int estat)
         {
-            nomTasca = NomTasca;
-            descripcio = Descripcio;
-            responsable = Responsable;
-            dataInici = DataInici;
-            dataFinal = DataFinal;
-            prioritat = Prioritat;
-            estat = Estat;
+            NomTasca = nomTasca;
+            Descripcio = descripcio;
+            Responsable = responsable;
+            DataInici = dataInici;
+            DataFinal = dataFinal;
+            Prioritat = prioritat;
+            Estat = estat;
         }
+
         public static void AfegirTasca(Tasca tasca)
         {
             MySqlConnection conn = new MySqlConnection(connectionString);
 
             conn.Open();
-            string query = "INSERT INTO Tasca (nom, descripcio, datacreacio, datafin, idUsuari, idPrioritat, coditasca ) VALUES (@nom, @descripcio, @dataInici, @dataFi, @user, @prioritat, @codiTasca)";
+            string query = "INSERT INTO Tasca (nom, descripcio, datacreacio, datafin, idUsuari, idEstat, idPrioritat, coditasca ) VALUES (@nom, @descripcio, @dataInici, @dataFi, @user, @estat, @prioritat, @codiTasca)";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@nom", tasca.NomTasca);
             cmd.Parameters.AddWithValue("@descripcio", tasca.Descripcio);
             cmd.Parameters.AddWithValue("@dataInici", tasca.DataInici);
             cmd.Parameters.AddWithValue("@dataFi", tasca.DataFinal);
             cmd.Parameters.AddWithValue("@user", login.UsuariActual.GetId());
+            cmd.Parameters.AddWithValue("@estat", NewTasca.estatSeleccionat);
             cmd.Parameters.AddWithValue("@prioritat", NewTasca.prioritatSeleccionada);
             cmd.Parameters.AddWithValue("@codiTasca", NewTasca.codiTascaGenerat);
-            cmd.Parameters.AddWithValue("@estat", NewTasca.estatSeleccionat);
 
 
 
