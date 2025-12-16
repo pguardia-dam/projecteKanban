@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.Cmp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,9 @@ namespace projecteKanban
             InitializeComponent();
         }
 
+        public static int prioritatSeleccionada = -1;
+        public static string codiTascaGenerat = "";
+        public static int estatSeleccionat = -1;
         private void CrearTasca(object sender, RoutedEventArgs e)
         {
             //string codiTasca = CodiTascaTextBox.Text;
@@ -56,6 +60,7 @@ namespace projecteKanban
                 Tasca.ContadorUrgents++;
                 tascaControl.Background = Brushes.Red;
                 tasca.CodiTasca = "U" + Tasca.ContadorUrgents.ToString();
+                
             }
             else if (tasca.Prioritat == 3)
             {
@@ -81,6 +86,11 @@ namespace projecteKanban
                 tascaControl.Background = Brushes.Gray;
                 tasca.CodiTasca = "O" + Tasca.ContadorOpcional.ToString();
             }
+
+            prioritatSeleccionada = tasca.Prioritat;
+            codiTascaGenerat = tasca.CodiTasca;
+            estatSeleccionat = tasca.Estat;
+            Tasca.AfegirTasca(tasca);
 
             var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
             if (mainWindow != null)

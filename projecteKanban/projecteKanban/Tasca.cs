@@ -42,14 +42,28 @@ namespace projecteKanban
             MySqlConnection conn = new MySqlConnection(connectionString);
 
             conn.Open();
-            string query = "INSERT INTO Tasca (nom, descripcio, datacreacio, datafin, ) VALUES (@nom, @contra, @resp)";
+            string query = "INSERT INTO Tasca (nom, descripcio, datacreacio, datafin, idUsuari, idPrioritat, coditasca ) VALUES (@nom, @descripcio, @dataInici, @dataFi, @user, @prioritat, @codiTasca)";
             MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@usr", login.UsuariActual.GetId());
+            cmd.Parameters.AddWithValue("@nom", tasca.NomTasca);
+            cmd.Parameters.AddWithValue("@descripcio", tasca.Descripcio);
+            cmd.Parameters.AddWithValue("@dataInici", tasca.DataInici);
+            cmd.Parameters.AddWithValue("@dataFi", tasca.DataFinal);
+            cmd.Parameters.AddWithValue("@user", login.UsuariActual.GetId());
+            cmd.Parameters.AddWithValue("@prioritat", NewTasca.prioritatSeleccionada);
+            cmd.Parameters.AddWithValue("@codiTasca", NewTasca.codiTascaGenerat);
+            cmd.Parameters.AddWithValue("@estat", NewTasca.estatSeleccionat);
+
+
+
+
 
             cmd.ExecuteNonQuery();
             conn.Close();
 
         }
+
+
+        
     }
 
 }
