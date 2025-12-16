@@ -54,18 +54,27 @@ namespace projecteKanban
             Contrasenya = contrasenya;
         }
 
+        public int GetId()
+        {
+            return id;
+        }   
+
         public static bool ComprovarDuplicats(string nom)
         {
-            return true;
-            //foreach (Usuari u in UsuariList)
-            //{
-            //    if (u.Nom == nom)
-            //    {
-            //        return true;
-            //    }
-            //}
-            //return false;
+            MySqlConnection conexio = new MySqlConnection(connectionString);
+            conexio.Open();
+
+            string query = "SELECT COUNT(*) FROM Usuari WHERE nom = @nom";
+            MySqlCommand comanda = new MySqlCommand(query, conexio);
+            comanda.Parameters.AddWithValue("@nom", nom);
+
+            int count = Convert.ToInt32(comanda.ExecuteScalar());
+
+            conexio.Close();
+
+            return count > 0;
         }
+
 
         public static Usuari Autenticar(string nom, string contrasenya)
         {

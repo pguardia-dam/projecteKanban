@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+
 
 namespace projecteKanban
 {
@@ -34,7 +36,7 @@ namespace projecteKanban
             contra = PasswordBox.Password;
             Usuari nouUsuari = new Usuari(usuari, contra, true);
 
-            Usuari.AfegirUsuari(nouUsuari);
+
 
 
             if (string.IsNullOrWhiteSpace(usuari) || string.IsNullOrWhiteSpace(contra))
