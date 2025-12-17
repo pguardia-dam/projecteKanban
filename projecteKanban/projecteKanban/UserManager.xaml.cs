@@ -89,6 +89,7 @@ namespace projecteKanban
             {
                 UserManagerUpdateWindow window = new UserManagerUpdateWindow(seleccionat);
                 window.ShowDialog(); // mejor ShowDialog para que sea modal
+                CarregarUsuaris();
             }
             else
             {
@@ -96,5 +97,22 @@ namespace projecteKanban
             }
         }
 
+
+        private void DeleteUser(object sender, RoutedEventArgs e)
+        {
+            Usuari seleccionat = (Usuari)lbUsers.SelectedItem;
+
+            if (seleccionat != null)
+            {
+                Usuari.EliminarUsuari(seleccionat.GetId());
+                CarregarUsuaris();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un usuari primer.");
+            }
+
+
+        }
     }
 }

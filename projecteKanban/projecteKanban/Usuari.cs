@@ -165,6 +165,32 @@ namespace projecteKanban
             return count > 0;
         }
 
+        public static void EliminarUsuari(int idUsuari)
+        {
+            MySqlConnection conn = new MySqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+                string query = "DELETE FROM Usuari WHERE idusuari = @id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@id", idUsuari);
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar l'usuari: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
 
     }
 }
