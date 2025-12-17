@@ -39,7 +39,7 @@
                 <RadioButton Name="BaixaRadioButton" Content="Baixa" Margin="0,0,10,10"/>
                 <RadioButton Name="OpcionalRadioButton" Content="Opcional/NA" Margin="0,0,10,10"/>
 
-                <Button Content="Crear Tasca" Width="100" HorizontalAlignment="Right" Margin="0,40,10,0" Click="CrearTasca"/>
+                <Button x:Name="CrearButton" Content="Crear Tasca" Width="100" HorizontalAlignment="Right" Margin="0,40,10,0" Click="CrearTasca"/>
             </StackPanel>
 
         </Grid>

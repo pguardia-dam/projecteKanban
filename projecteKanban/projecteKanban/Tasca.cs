@@ -44,6 +44,37 @@ namespace projecteKanban
             Prioritat = prioritat;
             Estat = estat;
         }
+        public static void ActualitzarTasca(Tasca t)
+        {
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"UPDATE Tasca 
+                         SET nom = @nom,
+                             descripcio = @desc,
+                             datacreacio = @inici,
+                             datafin = @final,
+                             idUsuari = @usuari,
+                             idEstat = @estat,
+                             idPrioritat = @prioritat
+                         WHERE coditasca = @codi";
+
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@nom", t.NomTasca);
+                    cmd.Parameters.AddWithValue("@desc", t.Descripcio);
+                    cmd.Parameters.AddWithValue("@inici", t.DataInici);
+                    cmd.Parameters.AddWithValue("@final", t.DataFinal);
+                    cmd.Parameters.AddWithValue("@usuari", t.IdUsuari != 0 ? t.IdUsuari : login.UsuariActual.GetId());
+                    cmd.Parameters.AddWithValue("@estat", t.Estat);
+                    cmd.Parameters.AddWithValue("@prioritat", t.Prioritat);
+                    cmd.Parameters.AddWithValue("@codi", t.CodiTasca);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
 
         public static void AfegirTasca(Tasca t)
         {

@@ -82,10 +82,15 @@ namespace projecteKanban
             }
         }
 
-        private void btnEditarTasca_Click(object sender, RoutedEventArgs e)
-        {
-            // Encara no implementat
-        }
+       private void btnEditarTasca_Click(object sender, RoutedEventArgs e)
+{
+    var tasca = DataContext as Tasca;
+    if (tasca == null) return;
+
+    var window = new NewTasca(tasca);
+    window.ShowDialog();
+}
+
 
         private void btnEliminarTasca_Click(object sender, RoutedEventArgs e)
         {
@@ -103,7 +108,8 @@ namespace projecteKanban
                 }
             }
 
-            MainWindow.RefrescarKanban();
+            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault(); 
+            mainWindow?.RefrescarKanban();
         }
     }
 }

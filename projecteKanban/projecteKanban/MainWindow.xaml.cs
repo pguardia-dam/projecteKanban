@@ -27,7 +27,7 @@ namespace projecteKanban
             new NewTasca().Show();
         }
 
-        public static void RefrescarKanban()
+        public void RefrescarKanban()
         {
             var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
             if (mainWindow == null) return;
