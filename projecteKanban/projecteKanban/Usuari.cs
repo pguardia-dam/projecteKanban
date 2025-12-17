@@ -4,17 +4,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace projecteKanban
 {
     public class Usuari 
     {
-        int id { get; set; }
+        public int id { get; set; }
         public string Nom { get; set; }
         public string Contrasenya { get; set; }
         public bool Responsable { get; set; }
 
         private static string connectionString = "Server=ellaboratori.cat;Database=pau;Uid=pau;Pwd=campa123;";
+        public Usuari(int id,string nom, string contrasenya, bool responsable)
+        {
+            this.id = id; 
+            Nom = nom;
+            Contrasenya = contrasenya;
+            Responsable = responsable;
+        }
         public Usuari(string nom, string contrasenya, bool responsable)
         {
             Nom = nom;
@@ -55,13 +63,14 @@ namespace projecteKanban
             if (reader.Read())
             {
                 usuari = new Usuari(
+                    reader.GetInt32("idusuari"),
                     reader.GetString("nom"),
                     reader.GetString("contrasenya"),
                     reader.GetBoolean("responsable")
                 );
 
                 // Si quieres guardar el id también:
-                usuari.id = reader.GetInt32("idusuari");
+                //usuari.id = reader.GetInt32("idusuari");
             }
 
             conexio.Close();
@@ -111,15 +120,43 @@ namespace projecteKanban
             return count > 0;
         }
 
+        public static void UpdateUser(Usuari usuari)
+        {
+            MySqlConnection conn = new MySqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+                string query = "UPDATE Usuari SET nom = @nom, contrasenya = @contra, responsable = @resp WHERE idusuari = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@id", usuari.GetId());
+                cmd.Parameters.AddWithValue("@nom", usuari.Nom);
+                cmd.Parameters.AddWithValue("@contra", usuari.Contrasenya);
+                cmd.Parameters.AddWithValue("@resp", usuari.Responsable);
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {   
+                MessageBox.Show("Error al actualizar usuario: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
         public static bool Autenticar(string nom, string contrasenya)
         {
             MySqlConnection conexio = new MySqlConnection(connectionString);
             conexio.Open();
 
-            string query = "SELECT COUNT(*) FROM Usuari WHERE nom = @nom";
+            string query = "SELECT COUNT(*) FROM Usuari WHERE nom = @nom AND contrasenya = @contra";
             MySqlCommand comanda = new MySqlCommand(query, conexio);
             comanda.Parameters.AddWithValue("@nom", nom);
+            comanda.Parameters.AddWithValue("@contra", contrasenya);
 
             int count = Convert.ToInt32(comanda.ExecuteScalar());
 
@@ -127,6 +164,7 @@ namespace projecteKanban
 
             return count > 0;
         }
+
 
     }
 }

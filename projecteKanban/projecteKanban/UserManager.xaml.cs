@@ -81,10 +81,20 @@ namespace projecteKanban
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void EditWindow(object sender, RoutedEventArgs e)
         {
             Usuari seleccionat = (Usuari)lbUsers.SelectedItem;
-            MessageBox.Show("user" + seleccionat.GetNom());
+
+            if (seleccionat != null)
+            {
+                UserManagerUpdateWindow window = new UserManagerUpdateWindow(seleccionat);
+                window.ShowDialog(); // mejor ShowDialog para que sea modal
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un usuario primero.");
+            }
         }
+
     }
 }

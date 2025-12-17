@@ -117,6 +117,9 @@
     <Compile Include="UserManager.xaml.cs">
       <DependentUpon>UserManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserManagerUpdateWindow.xaml.cs">
+      <DependentUpon>UserManagerUpdateWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Usuari.cs" />
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
@@ -154,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserManagerUpdateWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

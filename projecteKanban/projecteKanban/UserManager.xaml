@@ -15,7 +15,7 @@
 
         <!-- Lista de usuarios -->
         <ListBox x:Name="lbUsers" Grid.Row="1" Height="350" Width="600" Margin="10,10,0,0" DisplayMemberPath="Nom" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="676,94,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Editar" HorizontalAlignment="Left" Margin="696,42,0,0" Grid.Row="1" VerticalAlignment="Top" Click="EditWindow"/>
 
     </Grid>
 </Window>
