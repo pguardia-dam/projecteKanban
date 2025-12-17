@@ -19,12 +19,21 @@ namespace projecteKanban
 
         private void btnUsuari_Click(object sender, RoutedEventArgs e)
         {
-            new UserManager().Show();
+            if(login.UsuariActual.GetResponsable())
+                new UserManager().Show();
+            else
+                MessageBox.Show("No tens permisos per accedir a la gestió d'usuaris.");
         }
 
         private void btnAfegir_Click(object sender, RoutedEventArgs e)
         {
             new NewTasca().Show();
+        }
+        private void BackLogin(object sender, RoutedEventArgs e)
+        {
+            Window w = new login();
+            w.Show();
+            this.Close();
         }
 
         public void RefrescarKanban()
@@ -36,14 +45,15 @@ namespace projecteKanban
             mainWindow.col2.Children.Clear();
             mainWindow.col3.Children.Clear();
 
-
-
             List<Tasca> tasques = new List<Tasca>();
 
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT coditasca, nom, descripcio, idUsuari, datacreacio, datafin, idPrioritat, idEstat FROM Tasca";
+
+                string query = @"SELECT t.*, u.nom AS Responsable 
+                         FROM Tasca t 
+                         JOIN Usuari u ON t.idUsuari = u.idusuari;";
 
                 using (var cmd = new MySqlCommand(query, conn))
                 using (var reader = cmd.ExecuteReader())
@@ -53,7 +63,7 @@ namespace projecteKanban
                         var t = new Tasca(
                             reader.GetString("nom"),
                             reader.GetString("descripcio"),
-                            reader.GetInt32("idUsuari"),
+                            reader.GetString("Responsable"),  
                             reader.GetDateTime("datacreacio"),
                             reader.GetDateTime("datafin"),
                             reader.GetInt32("idPrioritat"),
@@ -61,6 +71,8 @@ namespace projecteKanban
                         );
 
                         t.CodiTasca = reader.GetString("coditasca");
+                        t.IdUsuari = reader.GetInt32("idUsuari");
+
                         tasques.Add(t);
                     }
                 }
@@ -90,5 +102,6 @@ namespace projecteKanban
                 }
             }
         }
+
     }
 }

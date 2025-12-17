@@ -99,6 +99,10 @@ namespace projecteKanban
         {
             return id;
         }   
+        public bool GetResponsable()
+        {
+            return Responsable;
+        }   
         public void SetId(int ID)
         {
              id = ID;

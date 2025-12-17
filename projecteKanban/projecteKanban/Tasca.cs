@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Windows;
 
 namespace projecteKanban
 {
@@ -109,9 +110,14 @@ namespace projecteKanban
 
         public static void AfegirTasca(Tasca t)
         {
+            
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
+
+                t.Responsable = login.UsuariActual.Nom;
+
+
                 string query = "INSERT INTO Tasca (nom, descripcio, datacreacio, datafin, idUsuari, idEstat, idPrioritat, coditasca) " +
                                "VALUES (@nom, @desc, @inici, @final, @usuari, @estat, @prioritat, @codi)";
 

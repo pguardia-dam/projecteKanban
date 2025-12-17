@@ -11,52 +11,42 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
-
 
 namespace projecteKanban
 {
     /// <summary>
-    /// Lógica de interacción para Register.xaml
+    /// Lógica de interacción para NewUserEditor.xaml
     /// </summary>
-    public partial class Register : Window
+    public partial class NewUserEditor : Window
     {
-        private static string connectionString = "Server=ellaboratori.cat;Database=pau;Uid=pau;Pwd=campa123;";
-
-        public string usuari;
-        public string contra;
-        public Register()
+        public NewUserEditor()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SaveUser(object sender, RoutedEventArgs e)
         {
-            usuari = UsernameTextBox.Text;
-            contra = PasswordBox.Password;
-            Usuari nouUsuari = new Usuari(usuari, contra, false);
 
+            string username = UsernameTextBox.Text;
+            string password = PasswordBox.Password;
+            bool isAdmin = IsAdminCheckBox.IsChecked == true;
 
-
-
-            if (string.IsNullOrWhiteSpace(usuari) || string.IsNullOrWhiteSpace(contra))
+            Usuari nouUsuari = new Usuari(username, password, isAdmin);
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("El nom d'usuari i la contrasenya no poden estar buits.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
             }
             if (Usuari.ComprovarDuplicats(nouUsuari.Nom))
             {
                 MessageBox.Show("El nom d'usuari ja existeix.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
             }
             else
             {
                 Usuari.AfegirUsuari(nouUsuari);
                 MessageBox.Show("Usuari registrat correctament.", "Èxit", MessageBoxButton.OK, MessageBoxImage.Information);
-                Window loginWindow = new login();
-                loginWindow.Show();
                 this.Close();
             }
         }
+
     }
 }

@@ -76,9 +76,11 @@ namespace projecteKanban
 
         }
 
-        private void AfegirUser_Click(object sender, RoutedEventArgs e)
+        private void NewUser(object sender, RoutedEventArgs e)
         {
-
+            Window window = new NewUserEditor();
+            window.ShowDialog();
+            CarregarUsuaris();
         }
 
         private void EditWindow(object sender, RoutedEventArgs e)
@@ -102,14 +104,14 @@ namespace projecteKanban
         {
             Usuari seleccionat = (Usuari)lbUsers.SelectedItem;
 
-            if (seleccionat != null)
+            if (seleccionat != null && login.UsuariActual.GetNom() != seleccionat.GetNom())
             {
                 Usuari.EliminarUsuari(seleccionat.GetId());
                 CarregarUsuaris();
             }
             else
             {
-                MessageBox.Show("Selecciona un usuari primer.");
+                MessageBox.Show("No et pots eliminar a tu mateix");
             }
 
 

@@ -20,9 +20,10 @@
                 </Grid.ColumnDefinitions>
 
                 <Button Grid.Column="0" Name="btnAfegir" Content="Afegir Tasca" Click="btnAfegir_Click" Margin="15" HorizontalAlignment="Left"/>
+                <Button Grid.Column="0" Name="btnBackLogin" Content="Tornar al login" Click="BackLogin" Margin="105,15,0,15" HorizontalAlignment="Left"/>
 
 
-                <Button Name="btnUsuari" Content="Afegir Usuari" Click="btnUsuari_Click" Margin="0,10,30,15" HorizontalAlignment="Right" Height="25" Grid.ColumnSpan="2"/>
+                <Button Name="btnUsuari" Content="Gestor d'Usuaris" Click="btnUsuari_Click" Margin="0,10,30,15" HorizontalAlignment="Right" Height="25" Grid.ColumnSpan="2"/>
             </Grid>
 
         </Grid>
