@@ -9,6 +9,8 @@ namespace projecteKanban
     {
         private Tasca tascaOriginal;
         private bool isEditMode;
+        private int prioritatAntiga;
+
 
         // Constructor per crear
         public NewTasca()
@@ -22,6 +24,8 @@ namespace projecteKanban
         {
             tascaOriginal = tasca;
             isEditMode = true;
+
+            prioritatAntiga = tasca.Prioritat;
 
             // Omplir els camps amb les dades existents
             NomTascaTextBox.Text = tasca.NomTasca;
@@ -64,7 +68,8 @@ namespace projecteKanban
                 tascaOriginal.DataFinal = final;
                 tascaOriginal.Prioritat = prioritat;
 
-                Tasca.ActualitzarTasca(tascaOriginal); // UPDATE a la BD
+                // Guardar canvis
+                Tasca.ActualitzarTasca(tascaOriginal, tascaOriginal.CodiTasca, prioritatAntiga);
             }
             else
             {

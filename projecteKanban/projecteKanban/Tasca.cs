@@ -44,8 +44,36 @@ namespace projecteKanban
             Prioritat = prioritat;
             Estat = estat;
         }
-        public static void ActualitzarTasca(Tasca t)
+        public static void ActualitzarTasca(Tasca t, string codiAntic, int prioritatAntiga)
         {
+            // Només recalcular el codi si la prioritat ha canviat
+            if (t.Prioritat != prioritatAntiga)
+            {
+                switch (t.Prioritat)
+                {
+                    case 4:
+                        ContadorUrgents++;
+                        t.CodiTasca = "U" + ContadorUrgents;
+                        break;
+                    case 3:
+                        ContadorAlts++;
+                        t.CodiTasca = "A" + ContadorAlts;
+                        break;
+                    case 2:
+                        ContadorMig++;
+                        t.CodiTasca = "M" + ContadorMig;
+                        break;
+                    case 1:
+                        ContadorBaix++;
+                        t.CodiTasca = "B" + ContadorBaix;
+                        break;
+                    case 0:
+                        ContadorOpcional++;
+                        t.CodiTasca = "O" + ContadorOpcional;
+                        break;
+                }
+            }
+
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -56,8 +84,9 @@ namespace projecteKanban
                              datafin = @final,
                              idUsuari = @usuari,
                              idEstat = @estat,
-                             idPrioritat = @prioritat
-                         WHERE coditasca = @codi";
+                             idPrioritat = @prioritat,
+                             coditasca = @codiNou
+                         WHERE coditasca = @codiAntic";
 
                 using (var cmd = new MySqlCommand(query, conn))
                 {
@@ -68,12 +97,14 @@ namespace projecteKanban
                     cmd.Parameters.AddWithValue("@usuari", t.IdUsuari != 0 ? t.IdUsuari : login.UsuariActual.GetId());
                     cmd.Parameters.AddWithValue("@estat", t.Estat);
                     cmd.Parameters.AddWithValue("@prioritat", t.Prioritat);
-                    cmd.Parameters.AddWithValue("@codi", t.CodiTasca);
+                    cmd.Parameters.AddWithValue("@codiNou", t.CodiTasca);
+                    cmd.Parameters.AddWithValue("@codiAntic", codiAntic);
 
                     cmd.ExecuteNonQuery();
                 }
             }
         }
+
 
 
         public static void AfegirTasca(Tasca t)
