@@ -9,10 +9,10 @@ namespace projecteKanban
 {
     public class Usuari 
     {
-        int id;
-        public string Nom;
-        public string Contrasenya;
-        public bool Responsable;
+        int id { get; set; }
+        public string Nom { get; set; }
+        public string Contrasenya { get; set; }
+        public bool Responsable { get; set; }
 
         private static string connectionString = "Server=ellaboratori.cat;Database=pau;Uid=pau;Pwd=campa123;";
         public Usuari(string nom, string contrasenya, bool responsable)

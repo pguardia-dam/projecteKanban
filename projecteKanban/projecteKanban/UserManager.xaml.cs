@@ -62,8 +62,8 @@ namespace projecteKanban
 
         private void CarregarUsuaris() 
         { 
+            lbUsers.DisplayMemberPath = "Nom";
             lbUsers.ItemsSource = GetAllUsers(); 
-            lbUsers.DisplayMemberPath = "nom";
         }
 
         private void EditarUser_Click(object sender, RoutedEventArgs e)
