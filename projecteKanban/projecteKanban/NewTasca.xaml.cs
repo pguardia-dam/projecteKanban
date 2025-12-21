@@ -52,56 +52,69 @@ namespace projecteKanban
             DateTime inici = (DateTime)DataIniciPicker.SelectedDate;
             DateTime final = (DateTime)DataEntregaPicker.SelectedDate;
 
-            int prioritat = -1;
-            if (UrgentRadioButton.IsChecked == true) prioritat = 4;
-            else if (AltaRadioButton.IsChecked == true) prioritat = 3;
-            else if (MitjaRadioButton.IsChecked == true) prioritat = 2;
-            else if (BaixaRadioButton.IsChecked == true) prioritat = 1;
-            else if (OpcionalRadioButton.IsChecked == true) prioritat = 0;
-
-            if (isEditMode)
-            {
-                // Actualitzar la tasca existent
-                tascaOriginal.NomTasca = nom;
-                tascaOriginal.Descripcio = desc;
-                tascaOriginal.DataInici = inici;
-                tascaOriginal.DataFinal = final;
-                tascaOriginal.Prioritat = prioritat;
-
-                // Guardar canvis
-                Tasca.ActualitzarTasca(tascaOriginal, tascaOriginal.CodiTasca, prioritatAntiga);
+            if (string.IsNullOrWhiteSpace(nom) || string.IsNullOrWhiteSpace(desc) 
+                || inici == null || final == null 
+                || (UrgentRadioButton.IsChecked != true 
+                && AltaRadioButton.IsChecked != true && MitjaRadioButton.IsChecked != true 
+                && BaixaRadioButton.IsChecked != true && OpcionalRadioButton.IsChecked != true)) 
+            { 
+                MessageBox.Show("Emplena tots els camps.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                // Crear nova tasca
-                Tasca t = new Tasca(
-                    nom,
-                    desc,
-                    login.UsuariActual.GetNom(),
-                    inici,
-                    final,
-                    prioritat,
-                    0
-                );
+                int prioritat = -1;
+                if (UrgentRadioButton.IsChecked == true) prioritat = 4;
+                else if (AltaRadioButton.IsChecked == true) prioritat = 3;
+                else if (MitjaRadioButton.IsChecked == true) prioritat = 2;
+                else if (BaixaRadioButton.IsChecked == true) prioritat = 1;
+                else if (OpcionalRadioButton.IsChecked == true) prioritat = 0;
 
-                // Generar codi segons prioritat
-                switch (prioritat)
+                if (isEditMode)
                 {
-                    case 4: Tasca.ContadorUrgents++; t.CodiTasca = "U" + Tasca.ContadorUrgents; break;
-                    case 3: Tasca.ContadorAlts++; t.CodiTasca = "A" + Tasca.ContadorAlts; break;
-                    case 2: Tasca.ContadorMig++; t.CodiTasca = "M" + Tasca.ContadorMig; break;
-                    case 1: Tasca.ContadorBaix++; t.CodiTasca = "B" + Tasca.ContadorBaix; break;
-                    case 0: Tasca.ContadorOpcional++; t.CodiTasca = "O" + Tasca.ContadorOpcional; break;
+                    // Actualitzar la tasca existent
+                    tascaOriginal.NomTasca = nom;
+                    tascaOriginal.Descripcio = desc;
+                    tascaOriginal.DataInici = inici;
+                    tascaOriginal.DataFinal = final;
+                    tascaOriginal.Prioritat = prioritat;
+
+                    // Guardar canvis
+                    Tasca.ActualitzarTasca(tascaOriginal, tascaOriginal.CodiTasca, prioritatAntiga);
+                }
+                else
+                {
+                    // Crear nova tasca
+                    Tasca t = new Tasca(
+                        nom,
+                        desc,
+                        login.UsuariActual.GetNom(),
+                        inici,
+                        final,
+                        prioritat,
+                        0
+                    );
+
+                    // Generar codi segons prioritat
+                    switch (prioritat)
+                    {
+                        case 4: Tasca.ContadorUrgents++; t.CodiTasca = "U" + Tasca.ContadorUrgents; break;
+                        case 3: Tasca.ContadorAlts++; t.CodiTasca = "A" + Tasca.ContadorAlts; break;
+                        case 2: Tasca.ContadorMig++; t.CodiTasca = "M" + Tasca.ContadorMig; break;
+                        case 1: Tasca.ContadorBaix++; t.CodiTasca = "B" + Tasca.ContadorBaix; break;
+                        case 0: Tasca.ContadorOpcional++; t.CodiTasca = "O" + Tasca.ContadorOpcional; break;
+                    }
+
+                    Tasca.AfegirTasca(t); // INSERT a la BD
                 }
 
-                Tasca.AfegirTasca(t); // INSERT a la BD
+                // Refrescar el kanban
+                var main = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+                main?.RefrescarKanban();
+
+                Close();
             }
 
-            // Refrescar el kanban
-            var main = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-            main?.RefrescarKanban();
-
-            Close();
+            
         }
     }
 }

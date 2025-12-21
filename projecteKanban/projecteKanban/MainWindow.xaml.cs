@@ -61,6 +61,7 @@ namespace projecteKanban
                     while (reader.Read())
                     {
                         var t = new Tasca(
+                            reader.GetInt32("idtasca"),
                             reader.GetString("nom"),
                             reader.GetString("descripcio"),
                             reader.GetString("Responsable"),  

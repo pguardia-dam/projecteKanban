@@ -100,10 +100,10 @@ namespace projecteKanban
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "DELETE FROM Tasca WHERE coditasca = @codi";
+                string query = "DELETE FROM Tasca WHERE idtasca = @codi";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@codi", tasca.CodiTasca);
+                    cmd.Parameters.AddWithValue("@codi", tasca.IdTasca);
                     cmd.ExecuteNonQuery();
                 }
             }

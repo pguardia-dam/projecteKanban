@@ -8,6 +8,7 @@ namespace projecteKanban
     {
         private static string connectionString = "Server=ellaboratori.cat;Database=pau;Uid=pau;Pwd=campa123;";
 
+        public int IdTasca { get; set; }
         public string CodiTasca { get; set; }
         public string NomTasca { get; set; }
         public string Descripcio { get; set; }
@@ -34,6 +35,19 @@ namespace projecteKanban
             Prioritat = prioritat;
             Estat = estat;
         }
+        public Tasca(int idTasca, string nom, string desc, string responsable,
+             DateTime inici, DateTime final, int prioritat, int estat)
+        {
+            IdTasca = idTasca;
+            NomTasca = nom;
+            Descripcio = desc;
+            Responsable = responsable;
+            DataInici = inici;
+            DataFinal = final;
+            Prioritat = prioritat;
+            Estat = estat;
+        }
+
 
         public Tasca(string nom, string desc, string responsable, DateTime inici, DateTime final, int prioritat, int estat)
         {
