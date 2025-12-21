@@ -5,16 +5,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projecteKanban"
         mc:Ignorable="d"
-        Title="NewUserEditor" Height="450" Width="350">
+        Title="NewUserEditor"
+        Height="450"
+        Width="350"
+        Background="#F3F4F6">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="12"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        <StackPanel Margin="20">
-            <TextBlock Text="Usuari Nou" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center"/>
-            <TextBlock Text="Username:" Margin="0,0,0,5"/>
-            <TextBox Name="UsernameTextBox" Margin="0,0,0,10"/>
-            <TextBlock Text="Password:" Margin="0,0,0,5"/>
-            <PasswordBox Name="PasswordBox" Margin="0,0,0,20"/>
-            <CheckBox Name="IsAdminCheckBox" Content="És Admin" Margin="0,0,0,20"/>
-            <Button Content="Save" Width="75" HorizontalAlignment="Center" Click="SaveUser"/>
-        </StackPanel>
+        <Border Background="#FFFFFF"
+                CornerRadius="10"
+                Padding="20"
+                Margin="20"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1">
+
+            <StackPanel>
+
+                <TextBlock Text="Usuari Nou"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           Foreground="#374151"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                <TextBlock Text="Username:" FontSize="16" Margin="0,0,0,5"/>
+                <TextBox Name="UsernameTextBox"
+                         Height="28"
+                         Margin="0,0,0,15"/>
+
+                <TextBlock Text="Password:" FontSize="16" Margin="0,0,0,5"/>
+                <PasswordBox Name="PasswordBox"
+                             Height="28"
+                             Margin="0,0,0,15"/>
+
+                <CheckBox Name="IsAdminCheckBox"
+                          Content="És Admin"
+                          FontSize="14"
+                          Margin="0,0,0,20"/>
+
+                <Button Content="Guardar"
+                        Width="120"
+                        Padding="10,5"
+                        HorizontalAlignment="Center"
+                        Background="#4F46E5"
+                        Foreground="White"
+                        BorderBrush="#4F46E5"
+                        BorderThickness="1"
+                        FontSize="16"
+                        Click="SaveUser"/>
+
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

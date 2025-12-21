@@ -5,20 +5,78 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projecteKanban"
         mc:Ignorable="d"
-        Title="Register" Height="450" Width="800">
+        Title="Register"
+        Height="450"
+        Width="800"
+        Background="#F3F4F6">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="12"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200">
-            <TextBlock Text="Register" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center"/>
-            <TextBlock Text="Username:" Margin="0,0,0,5"/>
-            <TextBox Name="UsernameTextBox" Margin="0,0,0,10"/>
-            <TextBlock Text="Password:" Margin="0,0,0,5"/>
-            <PasswordBox Name="PasswordBox" Margin="0,0,0,20"/>
-                <Button Content="Register" Width="75" HorizontalAlignment="Center" Click="Button_Click" />
-        </StackPanel>
+
+        <Border Grid.Column="1"
+                Background="#FFFFFF"
+                CornerRadius="10"
+                Padding="30"
+                Width="260"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+
+            <StackPanel>
+
+                <TextBlock Text="Register"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           Foreground="#374151"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                <TextBlock Text="Username:" FontSize="16" Margin="0,0,0,5"/>
+                <TextBox Name="UsernameTextBox"
+                         Height="28"
+                         Margin="0,0,0,15"/>
+
+                <TextBlock Text="Password:" FontSize="16" Margin="0,0,0,5"/>
+                <PasswordBox Name="PasswordBox"
+                             Height="28"
+                             Margin="0,0,0,25"/>
+
+                <Button Content="Register"
+                        Width="120"
+                        Padding="10,5"
+                        Background="#4F46E5"
+                        Foreground="White"
+                        BorderBrush="#4F46E5"
+                        BorderThickness="1"
+                        FontSize="16"
+                        HorizontalAlignment="Center"
+                        Click="Button_Click"/>
+
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

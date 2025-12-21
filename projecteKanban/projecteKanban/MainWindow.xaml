@@ -5,71 +5,152 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projecteKanban"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="450"
+        Width="800"
+        Background="#F3F4F6">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="12"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="70" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0" Name="btnAfegir" Content="Afegir Tasca" Click="btnAfegir_Click" Margin="15" HorizontalAlignment="Left"/>
-                <Button Grid.Column="0" Name="btnBackLogin" Content="Tornar al login" Click="BackLogin" Margin="105,15,0,15" HorizontalAlignment="Left"/>
+        <Grid Grid.Row="0" Background="#FFFFFF">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        Margin="10,0,0,0">
 
-                <Button Name="btnUsuari" Content="Gestor d'Usuaris" Click="btnUsuari_Click" Margin="0,10,30,15" HorizontalAlignment="Right" Height="25" Grid.ColumnSpan="2"/>
-            </Grid>
+                <Button Name="btnAfegir"
+                        Content="Afegir Tasca"
+                        Click="btnAfegir_Click"
+                        Margin="0,0,10,0"
+                        Padding="10,5"
+                        Background="#4F46E5"
+                        Foreground="White"
+                        BorderBrush="#4F46E5"
+                        BorderThickness="1"/>
 
+                <Button Name="btnBackLogin"
+                        Content="Tornar al login"
+                        Click="BackLogin"
+                        Padding="10,5"
+                        Background="#6B7280"
+                        Foreground="White"
+                        BorderBrush="#6B7280"
+                        BorderThickness="1"/>
+            </StackPanel>
+
+            <Button Grid.Column="1"
+                    Name="btnUsuari"
+                    Content="Gestor d'Usuaris"
+                    Click="btnUsuari_Click"
+                    Margin="0,10,20,10"
+                    Padding="10,5"
+                    Background="#10B981"
+                    Foreground="White"
+                    BorderBrush="#10B981"
+                    BorderThickness="1"/>
         </Grid>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Background="#FFFFFF">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="42*" />
+                <ColumnDefinition Width="42*"/>
                 <ColumnDefinition Width="224*"/>
-                <ColumnDefinition Width="267*" />
-                <ColumnDefinition Width="267*" />
+                <ColumnDefinition Width="267*"/>
+                <ColumnDefinition Width="267*"/>
             </Grid.ColumnDefinitions>
 
+            <TextBlock Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Text="Per fer"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Foreground="#374151"/>
 
-            <StackPanel  Grid.Column="0" Margin="20,20,20,20" Grid.ColumnSpan="2">
-                <TextBlock HorizontalAlignment="Center">Per fer</TextBlock>
-            </StackPanel>
-            <StackPanel  Grid.Column="2" Margin="20,20,20,20">
-                <TextBlock HorizontalAlignment="Center">En proces</TextBlock>
+            <TextBlock Grid.Column="2"
+                       Text="En proces"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Foreground="#374151"/>
 
-            </StackPanel>
-            <StackPanel  Grid.Column="3" Margin="20,20,20,20">
-                <TextBlock HorizontalAlignment="Center">Fetes</TextBlock>
-
-            </StackPanel>
-
+            <TextBlock Grid.Column="3"
+                       Text="Fetes"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Foreground="#374151"/>
         </Grid>
-        <Grid Grid.Row="2">
+
+        <Grid Grid.Row="2" Margin="10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
+            <Border Grid.Column="0"
+                    Background="#FFFFFF"
+                    CornerRadius="8"
+                    Padding="10"
+                    Margin="10"
+                    BorderBrush="#E5E7EB"
+                    BorderThickness="1">
+                <StackPanel Name="col1"/>
+            </Border>
 
-            <StackPanel  Grid.Column="0" Margin="20" Name="col1">
+            <Border Grid.Column="1"
+                    Background="#FFFFFF"
+                    CornerRadius="8"
+                    Padding="10"
+                    Margin="10"
+                    BorderBrush="#E5E7EB"
+                    BorderThickness="1">
+                <StackPanel Name="col2"/>
+            </Border>
 
-            </StackPanel>
-            <StackPanel  Grid.Column="1" Margin="20" Name="col2">
-
-            </StackPanel>
-            <StackPanel  Grid.Column="2" Margin="20" Name="col3">
-
-            </StackPanel>
+            <Border Grid.Column="2"
+                    Background="#FFFFFF"
+                    CornerRadius="8"
+                    Padding="10"
+                    Margin="10"
+                    BorderBrush="#E5E7EB"
+                    BorderThickness="1">
+                <StackPanel Name="col3"/>
+            </Border>
 
         </Grid>
+
     </Grid>
-    <!-- <local:Tasca />   -->
 </Window>
-    
